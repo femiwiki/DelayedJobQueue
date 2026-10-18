@@ -1,0 +1,16 @@
+{
+	"name": "DelayedJobQueue",
+	"version": "0.1.0",
+	"author": "[https://femiwiki.com/ Femiwiki Team]",
+	"url": "https://github.com/femiwiki/DelayedJobQueue",
+	"descriptionmsg": "delayedjobqueue-desc",
+	"license-name": "GPL-2.0-or-later",
+	"type": "other",
+	"requires": {
+		"MediaWiki": ">= 1.46.0"
+	},
+	"MessagesDirs": {
+		"DelayedJobQueue": ["i18n"]
+	},
+	"manifest_version": 2
+}
