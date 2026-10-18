@@ -9,8 +9,19 @@
 	"requires": {
 		"MediaWiki": ">= 1.46.0"
 	},
+	"AutoloadNamespaces": {
+		"MediaWiki\\Extension\\DelayedJobQueue\\": "src/"
+	},
 	"MessagesDirs": {
 		"DelayedJobQueue": ["i18n"]
+	},
+	"HookHandlers": {
+		"schema": {
+			"class": "MediaWiki\\Extension\\DelayedJobQueue\\SchemaHooks"
+		}
+	},
+	"Hooks": {
+		"LoadExtensionSchemaUpdates": "schema"
 	},
 	"manifest_version": 2
 }

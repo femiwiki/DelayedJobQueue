@@ -1,0 +1,62 @@
+[
+	{
+		"name": "delayed_job",
+		"comment": "Jobs that wait for their release time before they move to the job table",
+		"columns": [
+			{
+				"name": "dj_id",
+				"type": "integer",
+				"options": { "unsigned": true, "notnull": true, "autoincrement": true }
+			},
+			{
+				"name": "dj_cmd",
+				"comment": "job_cmd of the job",
+				"type": "binary",
+				"options": { "notnull": true, "default": "", "length": 60 }
+			},
+			{
+				"name": "dj_namespace",
+				"type": "integer",
+				"options": { "notnull": true }
+			},
+			{
+				"name": "dj_title",
+				"type": "binary",
+				"options": { "notnull": true, "length": 255 }
+			},
+			{
+				"name": "dj_params",
+				"comment": "job_params of the job, a PHP serialized array",
+				"type": "blob",
+				"options": { "notnull": true, "length": 16777215 }
+			},
+			{
+				"name": "dj_sha1",
+				"comment": "job_sha1 of the job",
+				"type": "binary",
+				"options": { "notnull": true, "length": 32, "default": "" }
+			},
+			{
+				"name": "dj_dedupe",
+				"comment": "Whether the job ignores duplicates",
+				"type": "mwtinyint",
+				"options": { "notnull": true, "default": 0 }
+			},
+			{
+				"name": "dj_release",
+				"comment": "When the job may run",
+				"type": "mwtimestamp",
+				"options": { "notnull": true }
+			}
+		],
+		"indexes": [
+			{
+				"name": "dj_cmd_release",
+				"columns": ["dj_cmd", "dj_release"],
+				"unique": false
+			},
+			{ "name": "dj_sha1", "columns": ["dj_sha1"], "unique": false }
+		],
+		"pk": ["dj_id"]
+	}
+]
