@@ -1,0 +1,10 @@
+{
+	"private": true,
+	"scripts": {
+		"test": "npm -s run lint",
+		"lint": "banana-checker --requireLowerCase=0 i18n/"
+	},
+	"devDependencies": {
+		"grunt-banana-checker": "0.13.0"
+	}
+}

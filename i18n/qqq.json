@@ -1,0 +1,6 @@
+{
+	"@metadata": {
+		"authors": ["Femiwiki Team"]
+	},
+	"delayedjobqueue-desc": "{{desc|name=DelayedJobQueue|url=https://github.com/femiwiki/DelayedJobQueue}}"
+}
